@@ -1,0 +1,31 @@
+<h1>This is the home controller</h1>
+<h1>Welcome {{ current_user }}</h1>
+<div ng-repeat="project in portfolioProjects track by $index | filter: searchText">
+    {{ project.follower }}
+    Title: {{ project.title }}
+    Description: {{ project.description }}
+
+    <div ng-switch on="project.follower.indexOf({{current_user_id}})===-1">
+    <div ng-switch-when="true">
+        <a href ng-click="follow(project.id)">follow!</a>
+    </div>
+    <div ng-switch-when="false">
+        <a href ng-click="unfollow(project.id)">unfollow!</a>
+    </div>
+    </div><!---->
+
+</div>
+<pagination items-per-page="itemPerPage" total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+<!--
+     <div>
+        Repository name: {{ repo.full_name }}<button ng-click="show = !show">See More</button>
+            <li ng-show='show'>
+                <span ng-if="repo.description !== ''">
+                    {{ repo.description }}
+                </span>
+                <span ng-if="repo.description === ''">
+                    There isn't any description
+                </span>
+            </li>
+    </div>
+</div>-->

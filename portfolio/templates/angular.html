@@ -1,0 +1,59 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- jQuery -->
+    <script src="{% static "js/vendors/jquery.js" %}"></script>
+    <!------- Angular ------->
+    <script src="{% static "js/vendors/angular/angular.js" %}"></script>
+    <script src="{% static "js/vendors/angular/angular-resource.js" %}"></script>
+    <script src="{% static "js/vendors/angular/angular-route.js" %}"></script>
+    <script src="{% static "js/vendors/angular/angular-sanitize.js" %}"></script>
+    <script src="{% static "js/vendors/angular-ui/ui-bootstrap-tpls-0.11.2.min.js" %}"></script>
+
+    <!------- Bootstrap ------->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- JavaScript -->
+    <script src="{% static "js/app.js" %}"></script> <!-- Added -->
+
+    <!------- custom directives -------->
+{#    <script src="{% static "js/directives/buttonDirective.js" %}"></script>#}
+
+    <!------- Factories ------->
+    <script src="{% static "js/factories/portfolioProjectResource.js" %}"></script>
+    <script src="{% static "js/factories/projectFactory.js" %}"></script>
+
+    <!------- services -------->
+    <script src="{% static "js/auth/auth.js" %}"></script>
+    <!------- Filters -------->
+{#    <script src="{% static "js/filters/topicType.js" %}"></script>#}
+
+    <!------- Controllers ------->
+    <script src="{% static "js/controllers/homeController.js" %}"></script> <!-- Added -->
+    <script src="{% static "js/controllers/myFollowsController.js" %}"></script>
+    <script src="{% static "js/controllers/authController.js" %}"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                This is outside of our Angular app. You could put a navbar here, for example.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-app="angPortfolio">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
